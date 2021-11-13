@@ -1,4 +1,7 @@
 import addJestHbsExtension from 'jest-hbs-extension';
-import { resolve } from 'path';
+import { ConfigService } from '../src/config/config.service';
 
-addJestHbsExtension(resolve(__dirname, '..', 'views'));
+const configService = new ConfigService();
+
+
+addJestHbsExtension(configService.get('templates.path'));
